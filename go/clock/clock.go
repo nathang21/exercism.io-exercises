@@ -8,18 +8,23 @@ package clock
 // clock_test.go.
 const testVersion = 4
 
+import fmt
 // Clock API as stub definitions.  No, it doesn't compile yet.
 // More details and hints are in clock_test.go.
 
-type Clock // Complete the type definition.  Pick a suitable data type.
+type Clock struct{ h, m int } // Complete the type definition.  Pick a suitable data type.
 
 func New(hour, minute int) Clock {
+  c := Clock{hour, minute}
+  return c
 }
 
-func (Clock) String() string {
+func (Clock *c) String() string {
+ return fmt.Sprintf("%d:%d", c.h, c.m)
 }
 
-func (Clock) Add(minutes int) Clock {
+func (Clock *c) Add(minutes int) Clock {
+  return
 }
 
 // Remember to delete all of the stub comments.
